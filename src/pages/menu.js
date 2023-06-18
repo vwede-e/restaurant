@@ -1,7 +1,7 @@
-import myImage from "../Images/Home.jpg";
+import myImage from "../Images/Menu.jpg";
 import "../style.css";
 
-export default function Home() {
+export default function Menu() {
     const main = document.createElement("main");
 
     //hero section
@@ -19,8 +19,8 @@ export default function Home() {
     heroText.classList.add("hero-text");
     const heading1 = document.createElement("h1");
     const paragraph1 = document.createElement("p");
-    heading1.textContent = "SUNDAY ROAST";
-    paragraph1.textContent = "\'PROBABLY THE BEST SUNDAY ROAST ON THE SQUARE\'";
+    heading1.textContent = "MENU";
+    paragraph1.textContent = "DINE, DRINK, AND CELEBRATE WITH US";
     heroText.appendChild(heading1);
     heroText.appendChild(paragraph1); 
     heroSection.appendChild(heroText);
@@ -36,23 +36,23 @@ export default function Home() {
     secondSectionText.classList.add("second-section-text");
     
     const h2 = document.createElement("h2");
-    h2.textContent = "WELCOME";
+    h2.textContent = "MENU";
     const p2 = document.createElement("p");
-    p2.textContent = "MARCO PIERRE WHITE HAS RETURNED TO THE CAPITAL'S WEST END - THE FIRST TIME IN OVER 10 YEARS.";
+    p2.textContent = "Serving up steaks and authentic Italian dishes from fresh pizza to indulgent pasta dishes. Marco’s friends also feature and inspire the menu. This includes Koffmann chips & fries, Frankie Dettori’s favourite Margherita pizza and Alex James’s Blue Monday pizza.";
     p2.style.fontWeight = "bolder";
     const p3 = document.createElement("p");
-    p3.textContent = "Located in Leicester Square, Mr. White's is now serving succulent steaks, authentic Italian pizza and Mr. White’s very own London Dry Gin in a vibrant and lively restaurant & bar.";
+    p3.textContent = "The restaurant has an array of gin and classic cocktails and is the very first location to serve Mr. White’s London Dry Gin.";
     const p4 = document.createElement("p");
-    p4.textContent = "For enquiries of tables of 12 and above please contact our reservations team on reservations@mrwhiteslondon.com.";
-    const p5 = document.createElement("p");
-    p5.innerHTML = "If you have a dream, you owe it to yourself to make it come true at all costs no matter what. </br> <span>- MARCO PIERRE WHITE</span>";
-    p5.classList.add("quote");
-
+    p4.textContent = "Dine, Drink & Celebrate with us.";
+    const foodMenuContainer = document.createElement("div");
+    foodMenuContainer.innerHTML = "<div><div>MAIN MENU</div></div> <div><div>DESSERT MENU</div></div> <div><div>SUNDAY ROAST MENU</div></div> <div><div>AFTERNOON TEA MENU</div></div> <div><div>SET MENU</div></div> <div><div>STEAK NIGHT MENU</div></div> <div><div>DRINKS MENU</div></div> <div><div>KIDS MENU</div></div>"
+    foodMenuContainer.classList.add("food-menu-container");
+    
     secondSectionText.appendChild(h2);
     secondSectionText.appendChild(p2)
     secondSectionText.appendChild(p3)
     secondSectionText.appendChild(p4)
-    secondSectionText.appendChild(p5)
+    secondSectionText.appendChild(foodMenuContainer)
 
     secondSection.appendChild(secondSectionText);
     main.appendChild(secondSection);
