@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/vwede-e/restaurant/issues"
   },
-  "homepage": "https://github.com/vwede-e/restaurant#readme",
+  "homepage": "https://github.com/vwede-e/restaurant/dist/index.html",
   "devDependencies": {
     "css-loader": "^6.8.1",
     "style-loader": "^3.3.3",
