@@ -1,5 +1,6 @@
 import control from "./control";
 import Header from "./header";
+import "./style.css";
 
 //render header 
 const header = Header();
@@ -22,26 +23,40 @@ function checkHeight() {
 
 //add event listeners to menu
 const nav = document.querySelector("nav");
-nav.addEventListener("click", switchView);
+const navChildren = nav.children;
+for (const elements of navChildren) {
+    elements.addEventListener("click", switchView)
+}
 
 //render home
 control.displayHome()
+highlightCurrentMenu();
+
 
 //event handler for menu
 function switchView(event) {
+    //prevent current page from rerendering if clicked
     if (control.getCurrentPage() === event.target.textContent ) {
         return 
     }
-    if (event.target.textContent === "HOME") {
+    else if (event.target.textContent === "HOME") {
         control.displayHome();
-        return
     }
-    if (event.target.textContent === "MENU") {
+    else if (event.target.textContent === "MENU") {
         control.displayMenu();
-        return
      }
-    if (event.target.textContent === "CONTACT") {
+    else  {
          control.displayContact();
-         return;
      }
+     highlightCurrentMenu()
+}
+ 
+function highlightCurrentMenu() {
+    const menuList = [...navChildren];
+    const prevMenu = document.getElementById("current-menu-highlight");
+    if (prevMenu) {
+        prevMenu.removeAttribute("id", "current-menu-highlight");
     }
+    const currMenu = menuList.find((menu) => menu.textContent === control.getCurrentPage());
+    currMenu.setAttribute("id", "current-menu-highlight");
+}

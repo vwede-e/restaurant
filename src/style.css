@@ -102,6 +102,10 @@ main {
     justify-content: space-evenly;
 }
 
+#current-menu-highlight {
+    border-bottom: 5px solid orange;
+}
+
 @media only screen and (max-width: 500px) {
     header {
         padding: 10px;
